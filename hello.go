@@ -2,8 +2,14 @@ package main
 
 import "fmt"
 
+// 避免每次创建字符串实例
+const englishHelloPrefix = "Hello, "
+
 func Hello(name string) string {
-	return "Hello, " + name
+	if name == "" {
+		name = "World"
+	}
+	return englishHelloPrefix + name
 }
 
 func main() {
